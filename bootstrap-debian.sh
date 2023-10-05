@@ -1,7 +1,7 @@
 #!/bin/bash
 losetup -Pf fs.img
 
-printf "Create basic directory layout..."
+echo "Create basic directory layout..."
 mkdir fs-mountpoint
 mount -o compress=zstd /dev/loop0p3 fs-mountpoint
 mkdir fs-mountpoint/efi
