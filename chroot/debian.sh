@@ -10,8 +10,8 @@ printf "Installing Armbian RK3588 kernel..."
 apt-get update
 apt-get install -y linux-image-edge-rockchip-rk3588 linux-dtb-edge-rockchip-rk3588
 
-printf "Installing GRUB2..."
-apt-get install -y grub-efi
+printf "Installing systemd components..."
+apt-get install -y systemd-boot systemd-resolved
 
 printf "Enabling wired network..."
 systemctl enable systemd-networkd
