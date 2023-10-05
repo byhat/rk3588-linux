@@ -13,3 +13,10 @@ apt-get install -y linux-image-edge-rockchip-rk3588 linux-dtb-edge-rockchip-rk35
 printf "Installing GRUB2..."
 apt-get install -y grub-efi
 
+printf "Enabling wired network..."
+systemctl enable systemd-networkd
+systemctl enable systemd-resolved
+
+printf "Installing bootloader..."
+systemctl enable systemd-boot
+bootctl --esp-path=/efi --boot-path=/boot install

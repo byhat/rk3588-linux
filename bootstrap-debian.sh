@@ -30,10 +30,8 @@ mount -t sysfs sys fs-mountpoint/sys
 printf "Setting up chroot scripts..."
 cp -R chroot fs-mountpoint/root/
 
-chroot fs-mountpoint /root/chroot/debian-p0.sh
+chroot fs-mountpoint /root/chroot/debian.sh
 
-printf "Configuring GRUB outside chroot..."
-cp grub/10_linux fs-mountpoint/etc/grub.d/
-
-chroot fs-mountpoint /root/chroot/debian-p1.sh
-
+printf "Copying systemd-boot configs..."
+cp systemd-boot/loader.conf fs-mountpoint/efi/loader/
+cp systemd-boot/linux.conf fs-mountpoint/boot/loader/entries/
