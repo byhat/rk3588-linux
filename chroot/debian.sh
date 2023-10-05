@@ -19,3 +19,5 @@ systemctl enable systemd-resolved
 
 echo "Installing bootloader..."
 bootctl --esp-path=/efi --boot-path=/boot install
+cp /boot/Image /boot/linux
+cp /boot/initrd* /boot/initramfs-linux.img
