@@ -1,3 +1,4 @@
+#!/bin/bash
 losetup -Pf fs.img
 
 printf "Create basic directory layout..."
