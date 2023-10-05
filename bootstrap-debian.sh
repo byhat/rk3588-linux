@@ -7,7 +7,9 @@ mkdir fs-mountpoint/boot
 mount /dev/loop0p1 fs-mountpoint/efi
 mount /dev/loop0p2 fs-mountpoint/boot
 
-debootstrap --arch arm64 bookworm fs-mountpoint http://deb.debian.org/debian/
+debootstrap --arch arm64 testing fs-mountpoint http://deb.debian.org/debian/
+
+genfstab -t PARTUUID fs-mountpoint > fs-mountpoint/etc/fstab
 
 mount --bind /dev fs-mountpoint/dev
 mount -t proc proc fs-mountpoint/proc

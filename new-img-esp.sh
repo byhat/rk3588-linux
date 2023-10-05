@@ -12,8 +12,4 @@ mkfs.fat -F32 -n esp /dev/loop0p1
 mkfs.fat -F32 -n extboot /dev/loop0p2
 mkfs.btrfs -L root /dev/loop0p3
 
-# TODO: optional?
 losetup -d /dev/loop0
-
-
-
