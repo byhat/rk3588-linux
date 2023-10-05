@@ -4,7 +4,7 @@ printf "Executing inside chroot (0)..."
 
 printf "Installing essential packages..."
 apt-get update
-apt-get -y install wget btrfs-progs
+apt-get -y install wget btrfs-progs initramfs-tools
 
 printf "Installing Armbian RK3588 kernel..."
 apt-get update
