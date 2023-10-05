@@ -18,5 +18,4 @@ systemctl enable systemd-networkd
 systemctl enable systemd-resolved
 
 printf "Installing bootloader..."
-systemctl enable systemd-boot
 bootctl --esp-path=/efi --boot-path=/boot install
