@@ -8,7 +8,7 @@ echo "Installing bootloader..."
 bootctl --esp-path=/efi --boot-path=/boot install
 
 echo "Installing Armbian RK3588 kernel..."
-apt-get install -y linux-image-edge-rockchip-rk3588 linux-dtb-edge-rockchip-rk3588
+apt-get install -y linux-image-midstream-rockchip-rk3588 linux-dtb-midstream-rockchip-rk3588
 
 # Network settings must be at the end of script
 
