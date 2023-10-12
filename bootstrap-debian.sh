@@ -10,7 +10,7 @@ mount /dev/loop0p1 fs-mountpoint/efi
 mount /dev/loop0p2 fs-mountpoint/boot
 
 echo "Bootstrapping..."
-debootstrap --include=btrfs-progs,initramfs-tools,systemd-boot,ca-certificates \
+debootstrap --include=btrfs-progs,zstd,initramfs-tools,systemd-boot,ca-certificates \
   --arch arm64 \
   testing \
   fs-mountpoint \
