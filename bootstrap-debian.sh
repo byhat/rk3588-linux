@@ -10,7 +10,7 @@ mount /dev/loop0p1 fs-mountpoint/efi
 mount /dev/loop0p2 fs-mountpoint/boot
 
 echo "Bootstrapping..."
-debootstrap --include=btrfs-progs,initramfs-tools,grub-efi,ca-certificates \
+debootstrap --include=btrfs-progs,initramfs-tools,systemd-boot-efi,ca-certificates \
   --arch arm64 \
   testing \
   fs-mountpoint \
@@ -34,7 +34,8 @@ cp -R chroot fs-mountpoint/root/
 chroot fs-mountpoint /root/chroot/debian.sh
 
 echo "Copying bootloader configs..."
-cp grub/10-linux fs-mountpoint/etc/grub.d/
+cp systemd-boot/loader.conf fs-mountpoint/efi/loader/
+cp systemd-boot/linux.conf fs-mountpoint/boot/loader/entries/
 
 echo "Configuring networks..."
 cp systemd-networkd/20-wired.network fs-mountpoint/etc/systemd/network/
